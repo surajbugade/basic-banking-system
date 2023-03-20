@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/home.css'
-// import image from '../images/bank.png'
 import image1 from '../images/bank-hero.png'
 import { Redirect } from 'react-router-dom'
 

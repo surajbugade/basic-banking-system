@@ -9,8 +9,6 @@ const TransferFunds = () => {
   const transactions = collection(database, 'transactions');
 
   const [done, setDone] = useState([]);
-  // const [user1, setUser1] = useState('');
-  // const [user2, setUser2] = useState('');
   const [status, setStatus] = useState(true);
 
   useEffect(() => {
@@ -48,18 +46,6 @@ const TransferFunds = () => {
     }
   }
 
-  // const updateData = (id, balance) => {
-  //   let docToUpdate = doc(database, '/customers', id);
-
-  //   updateDoc(docToUpdate, {
-  //     balance: balance+1
-  //   }).then(() => {
-  //     alert("Data Updated")
-  //   }).catch((err) => {
-  //     console.log("ERRR" + err)
-  //   })
-  // }
-
   const getValues = async (e) => {
     e.preventDefault();
 
@@ -77,8 +63,6 @@ const TransferFunds = () => {
       return false;
     }
     else {
-      // console.log(getAmount(value1, done))
-
       // Comparing the amount to be transfered and available balance of sender
       if (getAmount(value1, done) < amount) {
         alert("Balance insufficent")
@@ -156,17 +140,6 @@ const TransferFunds = () => {
               )
             })}
           </select>
-
-          {/* <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div> */}
 
           <input type="number" id='amt' className='amount' placeholder='Enter Amount' required />
           <input type="submit" className='submitBtn' value="submit" />
